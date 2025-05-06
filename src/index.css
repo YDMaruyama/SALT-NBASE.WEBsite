@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  background-color: #fff;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+}
+
+.font-sans {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+@layer components {
+  .nav-link {
+    @apply text-natural-700 hover:text-sage-600 transition-colors duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-sage-600 text-white px-8 py-3 rounded inline-block hover:bg-sage-700 transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .section-title {
+    @apply text-3xl font-serif mb-8 text-sage-800 relative inline-block;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-sage-400;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
