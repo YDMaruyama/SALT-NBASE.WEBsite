@@ -14,7 +14,7 @@ export function Navigation() {
               className="flex items-center gap-2 bg-[#00B900] text-white px-4 py-2 rounded-md text-sm hover:bg-[#00A000] transition-colors"
             >
               <MessageCircle className="w-4 h-4" />
-              LINEで予約
+              LINEで予約。
             </a>
           </div>
         </div>
