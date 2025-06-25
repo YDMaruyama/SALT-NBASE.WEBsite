@@ -86,7 +86,7 @@ export function Initiatives() {
   };
 
   return (
-    <section ref={sectionRef} className="py-12 bg-natural-50/50">
+    <section id="initiatives" ref={sectionRef} className="py-12 bg-natural-50/50">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <h2 className="text-3xl font-serif text-center mb-12 text-sage-800">SALT'NBASE.の取り組み</h2>
         

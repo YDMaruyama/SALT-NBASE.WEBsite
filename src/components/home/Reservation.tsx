@@ -2,7 +2,7 @@ import { MessageCircle } from 'lucide-react';
 
 export function Reservation() {
   return (
-    <section className="py-16 bg-sage-50/50">
+    <section id="reservation" className="py-16 bg-sage-50/50">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <h2 className="text-3xl font-serif mb-8 text-sage-800 text-center">ご予約について</h2>
         

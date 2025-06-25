@@ -2,7 +2,7 @@ import { Clock } from 'lucide-react';
 
 export function BusinessHours() {
   return (
-    <section className="py-10 px-4 md:px-8">
+    <section id="business-hours" className="py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-serif text-center mb-4 text-sage-800">営業時間・定休日</h2>
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">

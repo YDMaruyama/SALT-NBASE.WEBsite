@@ -1,6 +1,6 @@
 export function Introduction() {
   return (
-    <section className="py-10 px-4 md:px-8 max-w-6xl mx-auto">
+    <section id="introduction" className="py-10 px-4 md:px-8 max-w-6xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-serif mb-6 text-sage-800">心と体の調和を目指して</h2>
         <p className="text-lg text-natural-800 leading-relaxed max-w-3xl mx-auto mb-6">

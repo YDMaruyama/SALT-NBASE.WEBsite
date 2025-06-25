@@ -12,37 +12,140 @@ interface ScheduleType {
   id: string;
   name: string;
   description: string;
+  image: string;
   schedule: TimeSlot[];
 }
 
 const schedules: ScheduleType[] = [
   {
-    id: 'meditation',
-    name: '塩洞窟浄化瞑想プログラム',
-    description: '2.5時間のトータルケアで、心と体の真の調和を体験',
+    id: 'salt-single',
+    name: '塩洞窟単品プラン',
+    description: '60分の塩洞窟セッションで呼吸浄化とリラックスを体験',
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800',
     schedule: [
       {
-        time: '10:30-11:10',
-        title: '塩洞窟でのデトックス瞑想（40分）',
+        time: '10:30-11:30',
+        title: '塩洞窟セッション（60分）',
         details: [
-          '天然岩塩に囲まれた洞窟で、マイナスイオンを浴びながら深いリラックス瞑想',
-          '呼吸法と瞑想のガイダンス付き',
-          '快適な温度と湿度で心地よい空間'
+          '洞窟内で微粒子塩を吸入し、呼吸浄化とリラックス',
+          '呼吸法の簡易ガイド付き',
+          '快適な温度・湿度、マイナスイオン'
         ]
       },
       {
-        time: '11:15-12:00',
+        time: '11:35-12:20',
+        title: 'アフターケア＆ティータイム（45分）',
+        details: [
+          'ハーブティー提供',
+          '感想共有シート記入'
+        ]
+      },
+      {
+        time: '12:20-13:20',
+        title: 'お食事（60分）',
+        details: [
+          'オーガニック野菜と大豆中心の精進料理'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'salt-massage',
+    name: '塩洞窟＋マッサージプラン',
+    description: '塩洞窟内でマッサージ施術を同時に受けられる贅沢なプラン',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800',
+    schedule: [
+      {
+        time: '10:30-11:30',
+        title: '塩洞窟セッション＆マッサージ（60分）',
+        details: [
+          '洞窟内で微粒子塩吸入と同時にマッサージ施術',
+          '首肩～背中を中心にコリほぐし',
+          '呼吸法ガイド付き（担当：まり／れいこ）'
+        ]
+      },
+      {
+        time: '11:35-12:20',
         title: '循環排毒法（45分）',
         details: [
-          '誰でも簡単に扱える排毒棒を使用したセルフマッサージ法が学べる',
+          '排毒棒を使ったセルフマッサージ法',
           '深い呼吸法で体内浄化'
         ]
       },
       {
-        time: '12:00-13:00',
+        time: '12:20-13:20',
         title: 'お食事（60分）',
         details: [
-          'オーガニックで野菜と大豆を中心にした精進料理'
+          'オーガニック野菜と大豆中心の精進料理'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'salt-meditation',
+    name: '塩洞窟＋瞑想プラン',
+    description: '天然岩塩に囲まれた洞窟で深いリラックス瞑想を体験',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800',
+    schedule: [
+      {
+        time: '10:30-11:30',
+        title: 'デトックス瞑想（60分）',
+        details: [
+          '天然岩塩に囲まれた洞窟で深いリラックス瞑想',
+          '呼吸法と瞑想ガイダンス付き',
+          '快適な温度・湿度、マイナスイオン'
+        ]
+      },
+      {
+        time: '11:35-12:20',
+        title: '循環排毒法（45分）',
+        details: [
+          '排毒棒を使ったセルフマッサージ法',
+          '深い呼吸法で体内浄化'
+        ]
+      },
+      {
+        time: '12:20-13:20',
+        title: 'お食事（60分）',
+        details: [
+          'オーガニック野菜と大豆中心の精進料理'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'salt-healing',
+    name: '塩洞窟＋ヒーリングプラン',
+    description: '80分の塩洞窟セッションとヒーリング施術で深い癒しを体験',
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800',
+    schedule: [
+      {
+        time: '10:30-11:30',
+        title: '塩洞窟セッション（60分）',
+        details: [
+          '洞窟内で微粒子塩吸入とヒーリングBGMによる深いリラックス',
+          '呼吸法の簡易ガイド付き'
+        ]
+      },
+      {
+        time: '11:35-12:00',
+        title: 'ヒーリング施術（25分）',
+        details: [
+          '音叉（クリスタルチューナー）や軽いタッチでエネルギーバランス調整'
+        ]
+      },
+      {
+        time: '12:00-12:20',
+        title: 'フィードバック＆ガイダンス（20分）',
+        details: [
+          'ヒーリング体感のシェア、日常でできるセルフケアアドバイス'
+        ]
+      },
+      {
+        time: '12:20-13:20',
+        title: 'お食事（60分）',
+        details: [
+          'オーガニック野菜と大豆中心の精進料理'
         ]
       }
     ]
@@ -51,6 +154,7 @@ const schedules: ScheduleType[] = [
     id: 'tibet',
     name: 'チベットオイルマッサージ＆チベット薬草蒸しプラン',
     description: '1.5時間で心身の浄化を体験',
+    image: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80&w=800',
     schedule: [
       {
         time: '10:30-11:00',
@@ -76,6 +180,7 @@ const schedules: ScheduleType[] = [
     id: 'henna',
     name: '発酵排毒ヘナ＆チベット薬草蒸しプラン',
     description: '1.75時間の頭皮ケアと全身浄化',
+    image: 'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&q=80&w=800',
     schedule: [
       {
         time: '10:30-11:30',
@@ -87,8 +192,8 @@ const schedules: ScheduleType[] = [
         ]
       },
       {
-        time: '11:30-12:15',
-        title: 'チベット薬草蒸し（45分）',
+        time: '11:30-12:30',
+        title: 'チベット薬草蒸し（60分）',
         details: [
           'チベット伝統の薬草による全身蒸し',
           '心身の緊張をほぐし、深いリラックス効果',
@@ -103,27 +208,47 @@ export function Schedule() {
   const [selectedSchedule, setSelectedSchedule] = useState(schedules[0].id);
 
   return (
-    <section className="py-16 bg-sage-50/50 px-4 md:px-8">
+    <section id="schedule" className="py-16 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-serif text-center mb-12 text-sage-800">タイムスケジュール</h2>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          {schedules.map((schedule) => (
-            <button
-              key={schedule.id}
-              onClick={() => setSelectedSchedule(schedule.id)}
-              className={`px-8 py-4 rounded-lg font-medium transition-all duration-300 whitespace-normal min-w-[200px] ${
-                selectedSchedule === schedule.id
-                  ? 'bg-sage-600 text-white shadow-lg scale-105'
-                  : 'bg-sage-50 text-sage-700 hover:bg-sage-100'
-              }`}
-            >
-              <span className="text-sm block leading-relaxed">{schedule.name}</span>
-            </button>
-          ))}
+        <div className="mb-8">
+          <h3 className="text-xl font-serif text-sage-800 mb-4 text-center">塩洞窟プログラム</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+            {schedules.slice(0, 4).map((schedule) => (
+              <button
+                key={schedule.id}
+                onClick={() => setSelectedSchedule(schedule.id)}
+                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 text-left ${
+                  selectedSchedule === schedule.id
+                    ? 'bg-sage-600 text-white shadow-lg'
+                    : 'bg-sage-50 text-sage-700 hover:bg-sage-100'
+                }`}
+              >
+                <span className="text-sm block leading-relaxed">{schedule.name}</span>
+              </button>
+            ))}
+          </div>
+
+          <h3 className="text-xl font-serif text-sage-800 mb-4 text-center">その他のプログラム</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {schedules.slice(4).map((schedule) => (
+              <button
+                key={schedule.id}
+                onClick={() => setSelectedSchedule(schedule.id)}
+                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 text-left ${
+                  selectedSchedule === schedule.id
+                    ? 'bg-sage-600 text-white shadow-lg'
+                    : 'bg-sage-50 text-sage-700 hover:bg-sage-100'
+                }`}
+              >
+                <span className="text-sm block leading-relaxed">{schedule.name}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="relative min-h-[600px]">
+        <div className="relative">
           <AnimatePresence mode="wait">
             {schedules.map((schedule) => (
               selectedSchedule === schedule.id && (
@@ -133,26 +258,37 @@ export function Schedule() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute inset-0"
                 >
                   <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                    <div className="p-8">
-                      <div className="text-center mb-8">
-                        <h3 className="text-2xl font-serif text-sage-800 mb-2">{schedule.name}</h3>
-                        <p className="text-natural-700">{schedule.description}</p>
+                    {/* プラン画像 */}
+                    <div className="relative h-48 sm:h-64 overflow-hidden">
+                      <img
+                        src={schedule.image}
+                        alt={schedule.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4 text-white">
+                        <h3 className="text-xl sm:text-2xl font-serif mb-2">{schedule.name}</h3>
+                        <p className="text-sm sm:text-base opacity-90">{schedule.description}</p>
                       </div>
+                    </div>
 
-                      <div className="space-y-8">
+                    <div className="p-4 sm:p-8">
+                      <div className="space-y-6">
                         {schedule.schedule.map((slot, index) => (
-                          <div key={index} className="grid md:grid-cols-[150px_1fr] gap-4">
-                            <div className="text-sage-600 font-medium">{slot.time}</div>
+                          <div key={index} className="flex flex-col sm:flex-row gap-4">
+                            <div className="text-sage-600 font-medium text-sm sm:text-base sm:w-32 flex-shrink-0">
+                              {slot.time}
+                            </div>
                             <div>
-                              <h4 className="font-medium text-natural-800 mb-2">{slot.title}</h4>
-                              <ul className="space-y-2 text-natural-700 text-sm">
+                              <h4 className="font-medium text-natural-800 mb-2 text-sm sm:text-base">{slot.title}</h4>
+                              <ul className="space-y-2">
                                 {slot.details.map((detail, i) => (
                                   <li key={i} className="flex items-start gap-2">
                                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" />
-                                    {detail}
+                                    <span className="text-natural-700 text-sm">{detail}</span>
                                   </li>
                                 ))}
                               </ul>
@@ -161,21 +297,21 @@ export function Schedule() {
                         ))}
                       </div>
 
-                      <div className="border-t border-sage-100 pt-8 mt-8">
-                        <div className="grid md:grid-cols-2 gap-8">
+                      <div className="border-t border-sage-100 pt-6 mt-8">
+                        <div className="grid gap-6 sm:grid-cols-2">
                           <div>
                             <h3 className="text-lg font-serif text-sage-800 mb-4 flex items-center gap-2">
                               <Shirt className="w-5 h-5 text-sage-600" />
                               ご参加に際して
                             </h3>
-                            <ul className="space-y-2 text-natural-700 text-sm">
-                              <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-sage-400" />
-                                動きやすい服装でお越しください
+                            <ul className="space-y-2">
+                              <li className="flex items-start gap-2">
+                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" />
+                                <span className="text-natural-700 text-sm">動きやすい服装でお越しください</span>
                               </li>
-                              <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-sage-400" />
-                                ヨガマットは無料貸出あり
+                              <li className="flex items-start gap-2">
+                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" />
+                                <span className="text-natural-700 text-sm">ヨガマットは無料貸出あり</span>
                               </li>
                             </ul>
                           </div>

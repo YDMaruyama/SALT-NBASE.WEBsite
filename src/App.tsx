@@ -9,15 +9,20 @@ import { Reservation } from './components/home/Reservation';
 import { Testimonials } from './components/home/Testimonials';
 import { Footer } from './components/layout/Footer';
 import { SectionDivider } from './components/common/SectionDivider';
+import { MetaTags } from './components/seo/MetaTags';
+import { SaltNBaseStructuredData } from './components/seo/StructuredData';
 
 function App() {
   return (
     <div className="min-h-screen bg-natural-50">
+      <MetaTags canonicalUrl="https://salt-nbase.vercel.app/" />
+      <SaltNBaseStructuredData />
       <Navigation />
       <Hero />
       <Introduction />
       <SectionDivider />
       <Initiatives />
+      
       <SectionDivider />
       <Services />
       <SectionDivider />

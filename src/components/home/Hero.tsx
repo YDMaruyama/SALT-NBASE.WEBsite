@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export function Hero() {
   return (
-    <div className="relative pt-20">
+    <div id="home" className="relative pt-20">
       <div className="relative h-[80vh] overflow-hidden">
         <motion.div 
           className="absolute inset-0"
