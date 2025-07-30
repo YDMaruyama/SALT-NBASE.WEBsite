@@ -1,0 +1,84 @@
+# robots.txt for SALT'NBASE. (ソルトンベース) (https://salt-nbase.vercel.app)
+# 塩洞窟・ソルトン療法で心と体の調和を目指すウェルネス施設のウェブサイト
+
+# 全ての検索エンジンボットに対する基本設定
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /config/
+Disallow: /logs/
+Disallow: /temp/
+Disallow: /backup/
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+
+# Googlebot（Google検索エンジン）専用設定
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 1
+
+# Bingbot（Microsoft Bing検索エンジン）専用設定
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 2
+
+# Baiduspider（百度検索エンジン）専用設定
+User-agent: Baiduspider
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 3
+
+# Yandex（ロシアの検索エンジン）専用設定
+User-agent: YandexBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 2
+
+# DuckDuckGo検索エンジン専用設定
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 2
+
+# 悪意のあるボットやスクレイピングボットの制限
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# ソーシャルメディアボット（適度な制限）
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 5
+
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 3
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 5
+
+# サイトマップの場所を指定
+Sitemap: https://salt-nbase.vercel.app/sitemap.xml
+
+# 最終更新日: 2024年12月
+# 連絡先: info@saltnbase.jp
+# キーワード: ソルトンベース, 塩洞窟, ソルトン, ハロセラピー, チベット医学, 瞑想
