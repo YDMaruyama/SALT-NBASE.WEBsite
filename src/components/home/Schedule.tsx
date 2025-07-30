@@ -21,7 +21,7 @@ const schedules: ScheduleType[] = [
     id: 'salt-single',
     name: '塩洞窟単品プラン',
     description: '60分の塩洞窟セッションで呼吸浄化とリラックスを体験',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800',
+    image: '/820AA170-0458-45CC-B63C-1DCBAA82BA61.JPEG',
     schedule: [
       {
         time: '10:30-11:30',
@@ -39,12 +39,14 @@ const schedules: ScheduleType[] = [
           'ハーブティー提供',
           '感想共有シート記入'
         ]
-      },
+      }
+    ]
+  },
   {
     id: 'salt-massage',
     name: '塩洞窟＋マッサージプラン',
     description: '塩洞窟内でマッサージ施術を同時に受けられる贅沢なプラン',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800',
+    image: '/IMG_2153.jpg',
     schedule: [
       {
         time: '10:30-11:30',
@@ -54,7 +56,9 @@ const schedules: ScheduleType[] = [
           '首肩～背中を中心にコリほぐし',
           '呼吸法ガイド付き（担当：まり／れいこ）'
         ]
-      },
+      }
+    ]
+  },
   {
     id: 'tibet',
     name: 'チベットオイルマッサージ＆チベット薬草蒸しプラン',
@@ -111,6 +115,7 @@ const schedules: ScheduleType[] = [
 
 export function Schedule() {
   const [selectedSchedule, setSelectedSchedule] = useState(schedules[0].id);
+  const currentSchedule = schedules.find(s => s.id === selectedSchedule)!;
 
   return (
     <section id="schedule" className="py-16 px-4 md:px-8">
@@ -120,7 +125,7 @@ export function Schedule() {
         <div className="mb-8">
           <h3 className="text-xl font-serif text-sage-800 mb-4 text-center">塩洞窟プログラム</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
-            {schedules.slice(0, 4).map((schedule) => (
+            {schedules.slice(0, 2).map((schedule) => (
               <button
                 key={schedule.id}
                 onClick={() => setSelectedSchedule(schedule.id)}
@@ -137,7 +142,7 @@ export function Schedule() {
 
           <h3 className="text-xl font-serif text-sage-800 mb-4 text-center">その他のプログラム</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {schedules.slice(4).map((schedule) => (
+            {schedules.slice(2).map((schedule) => (
               <button
                 key={schedule.id}
                 onClick={() => setSelectedSchedule(schedule.id)}
@@ -155,88 +160,104 @@ export function Schedule() {
 
         <div className="relative">
           <AnimatePresence mode="wait">
-            {schedules.map((schedule) => (
-              selectedSchedule === schedule.id && (
-                <motion.div
-                  key={schedule.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                    {/* プラン画像 */}
-                    <div className="relative h-48 sm:h-64 overflow-hidden">
-                      <img
-                        src={schedule.image}
-                        alt={schedule.name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4 text-white">
-                        <h3 className="text-xl sm:text-2xl font-serif mb-2">{schedule.name}</h3>
-                        <p className="text-sm sm:text-base opacity-90">{schedule.description}</p>
-                      </div>
-                    </div>
+            <motion.div
+              key={selectedSchedule}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                {/* プラン画像 */}
+                <div className="relative h-48 sm:h-64 overflow-hidden">
+                  <img
+                    src={currentSchedule.image}
+                    alt={currentSchedule.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h3 className="text-xl sm:text-2xl font-serif mb-2">{currentSchedule.name}</h3>
+                    <p className="text-sm sm:text-base opacity-90">{currentSchedule.description}</p>
+                  </div>
+                </div>
 
-                    <div className="p-4 sm:p-8">
-                      <div className="space-y-6">
-                        {schedule.schedule.map((slot, index) => (
-                          <div key={index} className="flex flex-col sm:flex-row gap-4">
-                            <div className="text-sage-600 font-medium text-sm sm:text-base sm:w-32 flex-shrink-0">
-                              {slot.time}
-                            </div>
-                            <div>
-                              <h4 className="font-medium text-natural-800 mb-2 text-sm sm:text-base">{slot.title}</h4>
-                              <ul className="space-y-2">
-                                {slot.details.map((detail, i) => (
-                                  <li key={i} className="flex items-start gap-2">
-                                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" />
-                                    <span className="text-natural-700 text-sm">{detail}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
+                <div className="p-4 sm:p-8">
+                  {/* タイムスケジュール */}
+                  <div className="mb-8">
+                    <h4 className="text-lg font-medium text-sage-800 mb-4 flex items-center gap-2">
+                      <Clock className="w-5 h-5 text-sage-600" />
+                      タイムスケジュール
+                    </h4>
+                    <div className="space-y-6">
+                      {currentSchedule.schedule.map((slot, index) => (
+                        <div key={index} className="flex flex-col sm:flex-row gap-4">
+                          <div className="text-sage-600 font-medium text-sm sm:text-base sm:w-32 flex-shrink-0">
+                            {slot.time}
                           </div>
-                        ))}
-                      </div>
-
-                      <div className="border-t border-sage-100 pt-6 mt-8">
-                        <div className="grid gap-6 sm:grid-cols-2">
                           <div>
-                            <h3 className="text-lg font-serif text-sage-800 mb-4 flex items-center gap-2">
-                              <Shirt className="w-5 h-5 text-sage-600" />
-                              ご参加に際して
-                            </h3>
+                            <h5 className="font-medium text-natural-800 mb-2 text-sm sm:text-base">{slot.title}</h5>
                             <ul className="space-y-2">
-                              <li className="flex items-start gap-2">
-                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" />
-                                <span className="text-natural-700 text-sm">動きやすい服装でお越しください</span>
-                              </li>
-                              <li className="flex items-start gap-2">
-                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" />
-                                <span className="text-natural-700 text-sm">ヨガマットは無料貸出あり</span>
-                              </li>
+                              {slot.details.map((detail, i) => (
+                                <li key={i} className="flex items-start gap-2">
+                                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" />
+                                  <span className="text-natural-700 text-sm">{detail}</span>
+                                </li>
+                              ))}
                             </ul>
                           </div>
-
-                          <div>
-                            <h3 className="text-lg font-serif text-sage-800 mb-4 flex items-center gap-2">
-                              <Users className="w-5 h-5 text-sage-600" />
-                              参加条件
-                            </h3>
-                            <p className="text-natural-700 text-sm">
-                              お一人様から参加可能です
-                            </p>
-                          </div>
                         </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* 参加に際して */}
+                  <div className="border-t border-sage-100 pt-6">
+                    <div className="grid gap-6 sm:grid-cols-2">
+                      <div>
+                        <h4 className="text-lg font-serif text-sage-800 mb-4 flex items-center gap-2">
+                          <Shirt className="w-5 h-5 text-sage-600" />
+                          ご参加に際して
+                        </h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1 w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" />
+                            <span className="text-natural-700 text-sm">動きやすい服装でお越しください</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1 w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" />
+                            <span className="text-natural-700 text-sm">ヨガマットは無料貸出あり</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-serif text-sage-800 mb-4 flex items-center gap-2">
+                          <Users className="w-5 h-5 text-sage-600" />
+                          参加条件
+                        </h4>
+                        <p className="text-natural-700 text-sm">
+                          お一人様から参加可能です
+                        </p>
                       </div>
                     </div>
                   </div>
-                </motion.div>
-              )
-            ))}
+
+                  {/* 予約ボタン */}
+                  <div className="mt-8 text-center">
+                    <a
+                      href="https://lin.ee/nug2WAF"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#00B900] text-white px-8 py-4 rounded-lg text-lg hover:bg-[#00A000] transition-colors shadow-lg hover:shadow-xl"
+                    >
+                      このプランを予約する
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </AnimatePresence>
         </div>
       </div>
