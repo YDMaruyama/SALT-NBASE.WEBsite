@@ -28,10 +28,15 @@ export function Footer() {
           </div>
           <div>
             <h3 className="text-xl font-serif mb-4">営業時間</h3>
-            <p className="flex items-center">
-              <Clock className="w-5 h-5 mr-2" />
-              10:00～18:00
-            </p>
+            <div className="space-y-1">
+              <p className="flex items-center">
+                <Clock className="w-5 h-5 mr-2" />
+                火〜土：10:00～18:00
+              </p>
+              <p className="text-sm text-white/80">
+                定休日：月・日
+              </p>
+            </div>
           </div>
         </div>
       </div>
