@@ -14,9 +14,9 @@ export function BusinessHours() {
               </tr>
             </thead>
             <tbody className="divide-y divide-sage-100">
-              <tr className="hover:bg-sage-50 transition-colors">
-                <td className="py-4 px-6 text-natural-800">月曜日</td>
-                <td className="py-4 px-6 text-natural-800">10:00～18:00</td>
+              <tr className="hover:bg-sage-50 transition-colors bg-natural-50">
+                <td className="py-4 px-6 text-natural-800 font-medium">月曜日</td>
+                <td className="py-4 px-6 text-natural-800">休業日</td>
               </tr>
               <tr className="hover:bg-sage-50 transition-colors">
                 <td className="py-4 px-6 text-natural-800">火曜日</td>
@@ -26,9 +26,9 @@ export function BusinessHours() {
                 <td className="py-4 px-6 text-natural-800">水曜日</td>
                 <td className="py-4 px-6 text-natural-800">10:00～18:00</td>
               </tr>
-              <tr className="hover:bg-sage-50 transition-colors bg-natural-50">
-                <td className="py-4 px-6 text-natural-800 font-medium">木曜日</td>
-                <td className="py-4 px-6 text-natural-800">休業日</td>
+              <tr className="hover:bg-sage-50 transition-colors">
+                <td className="py-4 px-6 text-natural-800">木曜日</td>
+                <td className="py-4 px-6 text-natural-800">10:00～18:00</td>
               </tr>
               <tr className="hover:bg-sage-50 transition-colors">
                 <td className="py-4 px-6 text-natural-800">金曜日</td>
@@ -36,10 +36,6 @@ export function BusinessHours() {
               </tr>
               <tr className="hover:bg-sage-50 transition-colors">
                 <td className="py-4 px-6 text-natural-800">土曜日</td>
-                <td className="py-4 px-6 text-natural-800">10:00～18:00</td>
-              </tr>
-              <tr className="hover:bg-sage-50 transition-colors">
-                <td className="py-4 px-6 text-natural-800">日曜日</td>
                 <td className="py-4 px-6 text-natural-800">10:00～18:00</td>
               </tr>
             </tbody>
