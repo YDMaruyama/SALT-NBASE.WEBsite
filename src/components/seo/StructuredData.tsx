@@ -29,14 +29,13 @@ export function StructuredData({ type, data }: StructuredDataProps) {
             "addressLocality": "日本"
           },
           "openingHours": [
-            "Mo 10:00-18:00",
             "Tu 10:00-18:00", 
             "We 10:00-18:00",
+            "Th 10:00-18:00",
             "Fr 10:00-18:00",
-            "Sa 10:00-18:00",
-            "Su 10:00-18:00"
+            "Sa 10:00-18:00"
           ],
-          "priceRange": "¥5,000-¥10,000",
+          "priceRange": "¥5,000-¥9,800",
           "servesCuisine": "精進料理",
           "keywords": ["ソルトンベース", "塩洞窟", "ソルトン", "ソルト療法", "チベット医学", "瞑想", "ハロセラピー", "デトックス", "ウェルネス"],
           "hasOfferCatalog": {
@@ -62,7 +61,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
                   "description": "塩洞窟内でマッサージ施術を同時に受けられる贅沢なプラン。ソルトン療法とマッサージの相乗効果。",
                   "keywords": ["塩洞窟", "ソルトン", "マッサージ", "ハロセラピー"]
                 },
-                "price": "10000",
+                "price": "9800",
                 "priceCurrency": "JPY"
               },
               {
