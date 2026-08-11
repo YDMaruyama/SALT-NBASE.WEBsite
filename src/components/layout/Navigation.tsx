@@ -76,7 +76,7 @@ export function Navigation() {
           {/* Right side buttons */}
           <div className="flex items-center gap-4">
             <a 
-              href="https://lin.ee/nug2WAF"
+              href="https://liff.line.me/2007270512-9hcPSlcp/reserve?src=web"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-[#00B900] text-white px-4 py-2 rounded-md text-sm hover:bg-[#00A000] transition-colors shadow-md hover:shadow-lg"

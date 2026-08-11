@@ -240,7 +240,7 @@ export function PlanTabs() {
                   
                   <div className="mt-8 text-center">
                     <a
-                      href="https://lin.ee/nug2WAF"
+                      href="https://liff.line.me/2007270512-9hcPSlcp/reserve?src=web"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-[#00B900] text-white px-6 py-3 rounded-lg text-sm hover:bg-[#00A000] transition-colors"
